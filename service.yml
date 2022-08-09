@@ -5,16 +5,16 @@ metadata:
   labels:
     chapter: services
 spec:
-# ipFamilyPolicy: PreferDualStack
-# ipFamilies:
-# - IPv4
-# - IPv6
+  # ipFamilyPolicy: PreferDualStack
+  # ipFamilies:
+  # - IPv4
+  # - IPv6
   type: NodePort
   ports:
-  - port: 8080
-    nodePort: 30001
-    targetPort: 8080
-    protocol: TCP
+    - port: 8080
+      nodePort: 30002
+      targetPort: 8080
+      protocol: TCP
   selector:
     chapter: services
 
@@ -26,7 +26,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 9000
-    targetPort: 8080
+    - port: 9000
+      targetPort: 8080
   selector:
     chapter: services
