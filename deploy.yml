@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-ops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      chapter: services
+  template:
+    metadata:
+      labels:
+        chapter: services
+        
+    spec:
+      containers:
+      - name: kube-ctr
+        image: bethanecol/mlop:latest
+        ports:
+        - containerPort: 8080
